@@ -1,9 +1,12 @@
-// script.js
+// contentScript.js
 
 // Function to remove Reddit results from search outputs
 function removeRedditResults() {
   // Select all search result links
   const searchResultLinks = document.querySelectorAll('a');
+
+  // Array to store the Reddit result elements
+  const redditResultElements = [];
 
   // Loop through the search result links
   searchResultLinks.forEach((link) => {
@@ -11,12 +14,17 @@ function removeRedditResults() {
 
     // Check if the URL contains "reddit.com"
     if (url.includes('reddit.com')) {
-      // Find the parent element of the search result item and remove it
+      // Find the parent element of the search result item and add it to the array
       const resultItem = link.closest('.g');
       if (resultItem) {
-        resultItem.remove();
+        redditResultElements.push(resultItem);
       }
     }
+  });
+
+  // Remove the Reddit result elements from the page
+  redditResultElements.forEach((element) => {
+    element.remove();
   });
 }
 
