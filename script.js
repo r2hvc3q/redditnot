@@ -1,12 +1,11 @@
-// contentScript.js
-
 // Function to remove Reddit results from search outputs
 function removeRedditResults() {
-  // Select all search result links
-  const searchResultLinks = document.querySelectorAll('a');
+  // Select the search results container
+  const searchResultsContainer = document.getElementById('rso');
+  if (!searchResultsContainer) return;
 
-  // Array to store the Reddit result elements
-  const redditResultElements = [];
+  // Select all search result links within the container
+  const searchResultLinks = searchResultsContainer.querySelectorAll('a');
 
   // Loop through the search result links
   searchResultLinks.forEach((link) => {
@@ -14,30 +13,27 @@ function removeRedditResults() {
 
     // Check if the URL contains "reddit.com"
     if (url.includes('reddit.com')) {
-      // Find the parent element of the search result item and add it to the array
+      // Find the parent element of the search result item and remove it
       const resultItem = link.closest('.g');
       if (resultItem) {
-        redditResultElements.push(resultItem);
+        resultItem.remove();
       }
     }
   });
-
-  // Remove the Reddit result elements from the page
-  redditResultElements.forEach((element) => {
-    element.remove();
-  });
 }
 
-// Wait for the page to finish loading
-window.addEventListener('load', () => {
-  // Call the function to remove Reddit results
+// Call the function to remove Reddit results immediately
+removeRedditResults();
+
+// Observe the search results container for any changes (infinite scrolling, etc.)
+const observer = new MutationObserver(() => {
   removeRedditResults();
-
-  // Observe the search results for any changes (infinite scrolling, etc.)
-  const observer = new MutationObserver(() => {
-    removeRedditResults();
-  });
-
-  // Start observing the search results
-  observer.observe(document.body, { childList: true, subtree: true });
 });
+
+// Select the search results container element
+const searchResultsContainer = document.getElementById('rso');
+
+// Start observing the search results container
+if (searchResultsContainer) {
+  observer.observe(searchResultsContainer, { childList: true, subtree: true });
+}
