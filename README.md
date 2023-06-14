@@ -1,6 +1,6 @@
-# Reddit Remover Chrome Extension
+# RedditNot Chrome Extension
 
-The Reddit Remover Chrome extension removes Reddit results from Google search outputs, allowing you to browse search results without seeing any links associated with Reddit.
+The RedditNot Chrome extension removes Reddit results from Google search outputs, allowing you to browse search results without seeing any links associated with Reddit.
 
 ## Installation
 
@@ -18,7 +18,7 @@ To install the extension in Chrome, follow these steps:
 
 6. Select the folder and click **Select Folder** to load the extension.
 
-7. The Reddit Remover extension should now appear in the list of installed extensions on the `chrome://extensions` page.
+7. The RedditNot extension should now appear in the list of installed extensions on the `chrome://extensions` page.
 
 ## Usage
 
@@ -32,7 +32,7 @@ Once the extension is installed, it will automatically remove any Reddit results
 
 ## Support and Contributions
 
-If you encounter any issues with the extension or would like to contribute to its development, please open an issue or submit a pull request on the [GitHub repository](https://github.com/your-github-username/reddit-remover-chrome-extension).
+If you encounter any issues with the extension or would like to contribute to its development, please open an issue or submit a pull request on the [GitHub repository](https://github.com/r2hvc3q/redditnot).
 
 ## License
 
