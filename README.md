@@ -32,7 +32,7 @@ Once the extension is installed, it will automatically remove any Reddit results
 
 ## Support and Contributions
 
-If you encounter any issues with the extension or would like to contribute to its development, please open an issue or submit a pull request on the [GitHub repository](https://github.com/r2hvc3q/redditnot).
+If you encounter any issues with the extension or would like to contribute to its development, please open an issue or submit a pull request on the [GitHub repository](https://github.com/r2hvc3q/redditnot). View updates here on Github or on [Reddit](https://www.reddit.com/r/redditnot/).
 
 ## License
 
